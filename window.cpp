@@ -39,11 +39,6 @@ void Window::event_loop()
     int focus = -1;
     while(gin >> ev && ev.keycode != key_escape) {
 
-    if(focus != -1)
-    {
-    _widgets[focus]->handle(ev);
-    }
-
     if(ev.button == btn_left)
     {
     if(focus == -1)
@@ -95,6 +90,11 @@ void Window::event_loop()
             _widgets[focus]->setfocus();
             }
         }
+
+    if(focus != -1)
+    {
+    _widgets[focus]->handle(ev);
+    }
 
     if(ev.type == ev_timer)
     {

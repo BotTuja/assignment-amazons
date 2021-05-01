@@ -9,6 +9,7 @@ class Amazon : public Widget
 {
 Game* _master;
 bool _team;
+bool _shooting;
 public:
 Amazon(Window* parent, Game* master, int x, int y, bool team);
 virtual void draw();

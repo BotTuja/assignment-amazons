@@ -21,12 +21,16 @@ Game* GameMaster;
 protected:
     virtual void passive(event ev)
     {
-
+    if(ev.keycode == 'r')
+    {
+    delete GameMaster;
+    GameMaster = new Game(this,6);
+    }
     }
 public:
     MyWindow(int sx, int sy) : Window(sx,sy)
     {
-    GameMaster = new Game(this,6,6);
+    GameMaster = new Game(this,6);
     }
     virtual void cls()
     {

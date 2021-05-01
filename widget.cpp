@@ -19,7 +19,7 @@ bool Widget::subselected(event ev, int lx, int ux, int ly, int uy)
 
 bool Widget::isselected(event ev)
 {
-    if(subselected(ev,_x,_x+_sx,_y,_y+_sy)) _focused = true;
+    if(subselected(ev,_x,_x+_sx,_y,_y+_sy) && isselectable()) _focused = true;
     else _focused = false;
     return _focused;
 }

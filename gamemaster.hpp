@@ -9,14 +9,17 @@ class Game
 protected:
 int _sx,_sy;
 std::map<int,Widget*> _board;
-int _turn;
+bool _turn;
+bool _shooting;
 Window* _win;
 public:
-Game(Window* Parent,int x, int y);
+Game(Window* Parent,int s);
 ~Game();
-int getturn();
+bool getturn();
+bool getshooting();
 void moveturn();
 bool moveattempt(Widget* pawn, int mx, int my);
+bool shootattempt(Widget* pawn, int mx, int my);
 };
 
 #endif // GAMEMASTER_HPP_INCLUDED
